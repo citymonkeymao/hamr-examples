@@ -1,0 +1,26 @@
+package indi.yiju.hamr.examples.examples.ipcount;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.hadoop.mapreduce.Mapper.Context;
+
+import hamr.core.general.bean.AnnotedBean;
+import hamr.core.general.keyGenerator.KeyGenerator;
+
+public class IpKeyGenerator extends KeyGenerator{
+
+	@SuppressWarnings("rawtypes")
+	public IpKeyGenerator(Context context) {
+		super(context);
+	}
+	public List<AnnotedBean> generate(Object keyin , Object valuein)
+	{
+		List<AnnotedBean> ret = new ArrayList<AnnotedBean>();
+		String[] vals = valuein.toString().split("###");
+		IpCountBean bean = new IpCountBean();
+		bean.setUrl(vals[0]);
+		bean.setIp(vals[1]);
+		return ret;
+	}
+}

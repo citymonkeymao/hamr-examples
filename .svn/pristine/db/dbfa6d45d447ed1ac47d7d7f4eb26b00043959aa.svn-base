@@ -1,0 +1,35 @@
+package hamr.examples.visittime;
+
+import org.apache.hadoop.mapreduce.Reducer.Context;
+
+import hamr.core.general.bean.AnnotedBean;
+import hamr.core.general.counter.Counter;
+
+public class VisitTimeCounter extends Counter {
+	private Long firstTime;
+	private Long lastTime;
+
+	@SuppressWarnings("rawtypes")
+	public VisitTimeCounter(Context context) {
+		super(context);
+	}
+
+	@Override
+	public void count(AnnotedBean ab) {
+		Long time = ((VisitBean) ab).getMessageTime();
+		if (firstTime == null) {
+			firstTime = time;
+		}
+		lastTime = time;
+	}
+
+	@Override
+	public boolean end(AnnotedBean ret) {
+		if (firstTime != null && lastTime != null) {
+			((VisitBean) ret).setTotalTime(lastTime - firstTime);
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
