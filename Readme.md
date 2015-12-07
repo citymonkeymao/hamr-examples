@@ -1,5 +1,6 @@
 HAMR examples
 ===
+This is examples of HAMR 
 #word count
 The classcial example of mapreduce. [Official description](http://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
 Coresponding data: datas/wordcountdata
