@@ -1,6 +1,9 @@
 HAMR examples
 ===
-This is examples of HAMR 
+This is examples of HAMR.
+usage:
+
+hadoop jar example.jar xxxJob \<input path> \<output path>
 #word count
 The classcial example of mapreduce. [Official description](http://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
 
