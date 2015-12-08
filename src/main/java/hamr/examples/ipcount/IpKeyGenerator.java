@@ -39,6 +39,7 @@ public class IpKeyGenerator extends KeyGenerator {
 		IpCountBean bean = new IpCountBean();
 		bean.setUrl(vals[1]);
 		bean.setIp(vals[0]);
+		ret.add(bean);
 		return ret;
 	}
 }
