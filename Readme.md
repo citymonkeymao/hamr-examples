@@ -29,3 +29,6 @@ Calculate visit time of each sessionId.
 Coresponding data: datas/visittimedatas
 
 Format: message time###sessionId###url
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/citymonkeymao/hamr-examples/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
